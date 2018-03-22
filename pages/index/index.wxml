@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view class="container">
+  <view>
+    <image class='imgsise' src="/pages/image/logo.jpg"></image>
+    <view class='title'>
+      <text class='title1'>平安保险方案专家</text>
+    </view>
+    <view class='title'>
+      <text class='title2'>一站式为您和你家人免费咨询   |   </text>
+      <text class='title2 wire'>不限社保用药</text>
+    </view>
+    <view class='consult'>
+      <text class='consult-test'>免费咨询通道</text>
+      <view>
+        <icon class='triangle'></icon>
+      </view>
+    </view>
+  </view>
+  <view class='container2' wx:if="{{condition}}">
+    <text class='title3'>已有<text class='title3-red'>{{numbera}}</text>报名索要分析</text>
+    <form>
+      <input type='text' name='userName' class="int" placeholder="请输入您的姓名" value='{{userName}}' bindinput="userNameInput" />
+      <input type='number' class="int" name='phone' placeholder="请输入您的手机号" maxlength='11' value='{{phone}}' bindblur='checkphone' bindinput="phoneInput" />
+      <view class='yzm'>
+        <input type="number" class="auth" value='{{authCode}}' bindinput="authCodeInput" name='authCode' placeholder="请输入验证码" maxlength='6' />
+        <button type='primary' class="auth-span" disabled='{{disabled}}' data-id="2" bindtap="getVerificationCode"> {{text}} </button>
+      </view>
+      <view>
+        <button type="warn" bindtap="submit"> 免费预约专家分析 </button>
+        <text class='hint'>温馨提示：预约后，平安健康专家将通过电话与你联系，确认您的个人信息情况后会免费定制最佳方案！定制方案绝不收费！</text>
+      </view>
+    </form>
+  </view>
+  <view class='container3' wx:if="{{condition2}}">
+    <view class='icon'>
+      <icon type='success' size='80'></icon>
+      <text class='successTest'>预约成功，请保持联系方式畅通！</text>
+    </view>
+    <view>
+      <button type="warn" bindtap="submit"  bindtap="getBack"> 返回 </button>
+      <text class='hint'>温馨提示：预约后，平安健康专家将通过电话与你联系，确认您的个人信息情况后会免费定制最佳方案！定制方案绝不收费！</text>
+    </view>
+  </view>
+</view>

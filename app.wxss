@@ -1,0 +1,21 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  width: 100%;
+} 
+.container2 {
+  display: block;
+  margin-top: 15rpx;
+  width: 80%;
+  margin: 0 auto;
+}
+.container3 {
+  display: block;
+  margin-top: 15rpx;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+.icon {
+  margin: 40px 0px 0px 0px;
+}
