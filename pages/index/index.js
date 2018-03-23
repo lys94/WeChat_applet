@@ -18,7 +18,6 @@ Page({
   getCode: function (options) {
     var that = this;
     var currentTime = that.data.currentTime
-
     interval = setInterval(function () {
       currentTime--;
       that.setData({
@@ -36,6 +35,23 @@ Page({
   },
   // 发送验证码
   getVerificationCode() {
+    var phone = this.data.phone;
+    if (phone == '') {
+      wx.showModal({
+        title: '提示',
+        content: '请输入手机号码',
+        showCancel: false
+      })
+      return
+    }
+    if (!myreg.test(phone)) {
+      wx.showModal({
+        title: '提示',
+        content: '请输入正确的手机号码',
+        showCancel: false
+      })
+      return
+    }
     wx.showToast({
       title: '发送成功',
       icon: 'success',
